@@ -1,0 +1,23 @@
+name: my_ticket_app
+description: Ứng dụng Đặt Vé Xe / Tàu Flutter app
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  qr_flutter: ^4.0.0
+
+  # Add other dependencies here as needed, e.g. firebase_auth, cloud_firestore, stripe_payment, fl_chart
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
