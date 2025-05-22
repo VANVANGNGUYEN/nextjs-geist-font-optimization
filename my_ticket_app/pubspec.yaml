@@ -1,5 +1,5 @@
 name: my_ticket_app
-description: Ứng dụng Đặt Vé Xe / Tàu Flutter app
+description: Ứng dụng Đặt Vé Xe / Tàu Flutter app with Firebase integration
 
 publish_to: 'none'
 
@@ -12,8 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
   qr_flutter: ^4.0.0
-
-  # Add other dependencies here as needed, e.g. firebase_auth, cloud_firestore, stripe_payment, fl_chart
+  firebase_core: ^2.10.0
+  firebase_auth: ^4.4.0
+  cloud_firestore: ^4.5.0
 
 dev_dependencies:
   flutter_test:
