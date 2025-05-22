@@ -1,24 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 class AuthService {
-  // Placeholder for authentication methods
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  User? get currentUser => _firebaseAuth.currentUser;
 
   Future<bool> signInWithEmail(String email, String password) async {
-    // Implement Firebase or custom auth here
-    return true;
+    try {
+      await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+      return true;
+    } on FirebaseAuthException catch (e) {
+      print('FirebaseAuthException signIn: \$e');
+      return false;
+    } catch (e) {
+      print('Exception signIn: \$e');
+      return false;
+    }
   }
 
   Future<bool> signUpWithEmail(String email, String password) async {
-    // Implement Firebase or custom auth here
-    return true;
+    try {
+      await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      return true;
+    } on FirebaseAuthException catch (e) {
+      print('FirebaseAuthException signUp: \$e');
+      return false;
+    } catch (e) {
+      print('Exception signUp: \$e');
+      return false;
+    }
   }
 
   Future<void> signOut() async {
-    // Implement sign out logic
+    await _firebaseAuth.signOut();
   }
 
-  Future<bool> signInWithGoogle() async {
-    // Implement Google Sign-In logic
-    return true;
-  }
-
-  // Add methods for role checking, token management, etc.
+  // Add Google Sign-In and other auth methods as needed
 }
